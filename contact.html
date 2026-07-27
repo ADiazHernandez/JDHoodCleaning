@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Everest Hoods &amp; Ducts Cleaning</title>
+<meta name="description" content="Request a quote or schedule a hood and duct cleaning inspection with Everest Hoods & Ducts Cleaning.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.44.0/iconfont/tabler-icons.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="utility-bar">
+  <div class="container utility-bar__inner">
+    <span><i class="ti ti-shield-check" aria-hidden="true"></i> License #EH-88214 &middot; Licensed &amp; insured</span>
+    <span><i class="ti ti-phone" aria-hidden="true"></i> (555) 019-2280 &middot; Available 24/7</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="index.html" class="logo">EVEREST <span>Hoods &amp; Ducts</span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="compliance.html">Compliance</a>
+      <a href="contact.html" class="is-active">Contact</a>
+    </nav>
+    <a href="contact.html" class="btn btn--primary">Request service</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+      <i class="ti ti-menu-2" aria-hidden="true"></i>
+    </button>
+  </div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile" hidden>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="compliance.html">Compliance</a>
+    <a href="contact.html" class="is-active">Contact</a>
+    <a href="contact.html" class="btn btn--primary">Request service</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Contact us</h1>
+      <p>Request a quote, schedule an inspection, or ask a question. We respond to most requests within one business day.</p>
+    </div>
+  </section>
+
+  <section class="contact-layout container">
+    <div class="contact-info">
+      <h2>Get in touch</h2>
+      <div class="contact-info__item">
+        <i class="ti ti-phone" aria-hidden="true"></i>
+        <div>
+          <strong>Phone</strong>
+          <span>(555) 019-2280 &middot; available 24/7 for emergencies</span>
+        </div>
+      </div>
+      <div class="contact-info__item">
+        <i class="ti ti-mail" aria-hidden="true"></i>
+        <div>
+          <strong>Email</strong>
+          <span>info@everesthd.com</span>
+        </div>
+      </div>
+      <div class="contact-info__item">
+        <i class="ti ti-map-pin" aria-hidden="true"></i>
+        <div>
+          <strong>Service area</strong>
+          <span>Restaurants and commercial kitchens region-wide</span>
+        </div>
+      </div>
+      <div class="contact-info__item">
+        <i class="ti ti-clock" aria-hidden="true"></i>
+        <div>
+          <strong>Hours</strong>
+          <span>Monday&ndash;Saturday, 7am&ndash;7pm &middot; 24/7 emergency line</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h2 style="font-size:20px; margin-bottom:18px;">Request a quote</h2>
+      <form>
+        <div class="form-group">
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="business">Business name</label>
+          <input type="text" id="business" name="business">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div class="form-group">
+          <label for="plan">Interested in</label>
+          <select id="plan" name="plan">
+            <option value="standard">Standard (every 6 months)</option>
+            <option value="quarterly">Quarterly (every 3 months)</option>
+            <option value="high-volume">High-volume (monthly)</option>
+            <option value="not-sure">Not sure yet</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Tell us about your kitchen</label>
+          <textarea id="message" name="message" placeholder="Number of hoods, approximate square footage, current cleaning schedule, etc."></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--lg">Submit request</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <span>&copy; <span id="year"></span> Everest Hoods &amp; Ducts Cleaning</span>
+    <span>info@everesthd.com</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
