@@ -6,6 +6,10 @@
   --blue-50: #eaf1fa;
   --blue-100: #c7dbf0;
   --blue-bg: #f2f6fb;
+  --page-bg: #ffffff;
+  --surface: #ffffff;
+  --surface-muted: #f2f6fb;
+  --header-bg: #ffffff;
   --text-primary: #141b24;
   --text-secondary: #4a5768;
   --text-muted: #586675;
@@ -17,6 +21,21 @@
   --font-mono: 'IBM Plex Mono', monospace;
 }
 
+body.dark-mode {
+  --page-bg: #07131f;
+  --surface: #0f1726;
+  --surface-muted: #142234;
+  --header-bg: #0b1422;
+  --text-primary: #f4f7fb;
+  --text-secondary: #b6c2d2;
+  --text-muted: #8fa3b6;
+  --border: rgba(255, 255, 255, 0.12);
+  --blue-bg: #142234;
+  --navy-900: #f4f7fb;
+  --navy-800: #e6ecf4;
+  --navy-700: #0d2340;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -25,8 +44,9 @@ body {
   margin: 0;
   font-family: var(--font-sans);
   color: var(--text-primary);
-  background: var(--white);
+  background: var(--page-bg);
   line-height: 1.6;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .container {
@@ -45,6 +65,23 @@ h1, h2, h3 {
   color: var(--navy-900);
 }
 
+body.dark-mode .site-footer,
+body.dark-mode .service-card,
+body.dark-mode .plan-card,
+body.dark-mode .cta__inner,
+body.dark-mode .trust-strip {
+  background: var(--surface);
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+
+body.dark-mode .trust-strip__label,
+body.dark-mode .section-heading .eyebrow,
+body.dark-mode .plan-card__badge,
+body.dark-mode .badge {
+  color: var(--blue-100);
+}
+
 /* Utility bar */
 .utility-bar {
   background: var(--navy-700);
@@ -55,18 +92,46 @@ h1, h2, h3 {
 .utility-bar__inner {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 12px;
   padding: 6px 28px;
   font-size: 12px;
+}
+
+.utility-bar__meta {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
 }
 
 .utility-bar__inner i {
   margin-right: 5px;
 }
 
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #f4f7fb;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
 /* Header */
 .site-header {
   border-bottom: 1px solid var(--border);
   position: relative;
+  background: var(--header-bg);
 }
 
 .site-header__inner {
