@@ -22,7 +22,8 @@
       flex-direction: row;
       align-items: center;
     }
-    .service-with-media > .ba-slider-col {
+    .service-with-media > .ba-slider-col,
+    .service-with-media > .service-media-col {
       flex: 0 0 340px;
       max-width: 340px;
     }
@@ -30,6 +31,16 @@
       flex: 1;
       max-width: 460px;
     }
+  }
+
+  .service-media-col img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+    overflow: hidden;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
   }
 
   .ba-slider-col {
@@ -129,8 +140,7 @@
 <div class="utility-bar">
   <div class="container utility-bar__inner">
     <div class="utility-bar__meta">
-      <span><i class="ti ti-shield-check" aria-hidden="true"></i> License #EH-88214 &middot; Licensed &amp; insured</span>
-      <span><i class="ti ti-phone" aria-hidden="true"></i> (555) 019-2280 &middot; Available 24/7</span>
+      <span><i class="ti ti-phone" aria-hidden="true"></i> (608)-512-3790 &middot; Available for emergencies</span>
     </div>
     <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode">
       <i class="ti ti-moon" aria-hidden="true"></i>
@@ -199,73 +209,103 @@
         <i class="ti ti-air-conditioning" aria-hidden="true"></i>
         <div>
           <h3>Hood &amp; Duct Cleaning</h3>
-          <p>Our certified technicians thoroughly clean your entire commercial kitchen exhaust system, including the hood, ductwork, filters, and rooftop exhaust fan. We remove grease buildup down to bare metal in accordance with NFPA 96 standards, reducing fire hazards, improving ventilation, and helping keep your kitchen safe, efficient, and code compliant.</p>
+          <p>Our certified technicians clean your entire exhaust system &mdash; hood, ductwork, filters, and fan &mdash; down to bare metal per NFPA 96 standards, cutting fire risk and keeping your kitchen safe and code compliant.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="service-detail">
-    <div class="container service-detail__grid">
-      <i class="ti ti-file-certificate" aria-hidden="true"></i>
-      <div>
-        <h3>Compliance Documentation</h3>
-        <p>After every service, you'll receive a dated certification sticker and a detailed inspection report with before-and-after photos. Our documentation provides the records required by health inspectors, fire marshals, insurance providers, and property managers, giving you confidence that your exhaust system has been professionally serviced and meets industry standards.</p>
+  <section class="service-detail service-detail--with-media">
+    <div class="container service-with-media">
+      <div class="service-media-col">
+        <img src="Pictures/documentation.jpeg" alt="Dated compliance certification and inspection report documentation">
+      </div>
+      <div class="service-detail__grid">
+        <i class="ti ti-file-certificate" aria-hidden="true"></i>
+        <div>
+          <h3>Compliance Documentation</h3>
+          <p>After every service, you'll receive a dated certification sticker and a detailed inspection report with before-and-after photos. Our documentation provides the records required by health inspectors, fire marshals, insurance providers, and property managers, giving you confidence that your exhaust system has been professionally serviced and meets industry standards.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="service-detail">
-    <div class="container service-detail__grid">
-      <i class="ti ti-door" aria-hidden="true"></i>
-      <div>
-        <h3>Grease Duct Access Doors</h3>
-        <p>Grease duct access doors provide safe, code-compliant access to commercial kitchen exhaust ducts for routine inspection and cleaning. Proper access helps remove grease buildup, reducing fire hazards, improving system performance, and ensuring compliance with NFPA 96 fire safety standards.</p>
-        <p>Whether you're installing a new access panel or replacing an existing one, a properly installed grease duct access door makes ongoing maintenance safer, faster, and more efficient.</p>
+  <section class="service-detail service-detail--with-media">
+    <div class="container service-with-media">
+      <div class="service-media-col">
+        <img src="Pictures/access%20door.jpeg" alt="Grease duct access door installed on commercial kitchen ductwork">
+      </div>
+      <div class="service-detail__grid">
+        <i class="ti ti-door" aria-hidden="true"></i>
+        <div>
+          <h3>Grease Duct Access Doors</h3>
+          <p>Grease duct access doors provide safe, code-compliant access to commercial kitchen exhaust ducts for routine inspection and cleaning. Proper access helps remove grease buildup, reducing fire hazards, improving system performance, and ensuring compliance with NFPA 96 fire safety standards.</p>
+          <p>Whether you're installing a new access panel or replacing an existing one, a properly installed grease duct access door makes ongoing maintenance safer, faster, and more efficient.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="service-detail">
-    <div class="container service-detail__grid">
-      <i class="ti ti-adjustments-horizontal" aria-hidden="true"></i>
-      <div>
-        <h3>Hood Hinge Installation</h3>
-        <p>Hood hinge installation allows commercial kitchen exhaust hoods to be safely lifted for easier access during cleaning, inspection, and maintenance. Hinges improve accessibility, help technicians clean hard-to-reach areas, and support compliance with NFPA 96 fire safety standards.</p>
-        <p>Properly installed hood hinges make routine maintenance faster, safer, and more effective while helping extend the life of your exhaust system.</p>
+  <section class="service-detail service-detail--with-media">
+    <div class="container service-with-media">
+      <div class="service-media-col">
+        <img src="Pictures/hood%20hinge%20installation.jpeg" alt="Hood hinge installed on commercial kitchen exhaust hood">
+      </div>
+      <div class="service-detail__grid">
+        <i class="ti ti-adjustments-horizontal" aria-hidden="true"></i>
+        <div>
+          <h3>Hood Hinge Installation</h3>
+          <p>Hood hinge installation allows commercial kitchen exhaust hoods to be safely lifted for easier access during cleaning, inspection, and maintenance. Hinges improve accessibility, help technicians clean hard-to-reach areas, and support compliance with NFPA 96 fire safety standards.</p>
+          <p>Properly installed hood hinges make routine maintenance faster, safer, and more effective while helping extend the life of your exhaust system.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="service-detail">
-    <div class="container service-detail__grid">
-      <i class="ti ti-building-skyscraper" aria-hidden="true"></i>
-      <div>
-        <h3>Rooftop Grease Containment System Installation</h3>
-        <p>A rooftop grease containment system helps prevent grease from leaking onto the roof by capturing runoff from commercial kitchen exhaust fans. This protects the roof from damage, reduces slip hazards, helps maintain a cleaner facility, and supports compliance with environmental and safety regulations.</p>
-        <p>Proper installation helps extend the life of your roof while simplifying maintenance and cleanup.</p>
+  <section class="service-detail service-detail--with-media">
+    <div class="container service-with-media">
+      <div class="service-media-col">
+        <img src="Pictures/grease%20containment%20system.jpeg" alt="Rooftop grease containment system installed near exhaust fan">
+      </div>
+      <div class="service-detail__grid">
+        <i class="ti ti-building-skyscraper" aria-hidden="true"></i>
+        <div>
+          <h3>Rooftop Grease Containment System Installation</h3>
+          <p>A rooftop grease containment system helps prevent grease from leaking onto the roof by capturing runoff from commercial kitchen exhaust fans. This protects the roof from damage, reduces slip hazards, helps maintain a cleaner facility, and supports compliance with environmental and safety regulations.</p>
+          <p>Proper installation helps extend the life of your roof while simplifying maintenance and cleanup.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="service-detail">
-    <div class="container service-detail__grid">
-      <i class="ti ti-filter" aria-hidden="true"></i>
-      <div>
-        <h3>Filter Replacement</h3>
-        <p>Regular filter replacement keeps your commercial kitchen exhaust system operating safely and efficiently. Clean, properly functioning filters improve airflow, reduce grease buildup in the ductwork, lower the risk of fire, and help maintain compliance with NFPA 96 standards.</p>
-        <p>Replacing worn or damaged filters also helps extend the life of your exhaust system and improves overall kitchen ventilation.</p>
+  <section class="service-detail service-detail--with-media">
+    <div class="container service-with-media">
+      <div class="service-media-col">
+        <img src="Pictures/filter%20replacement.jpeg" alt="Clean replacement grease filters for commercial kitchen exhaust hood">
+      </div>
+      <div class="service-detail__grid">
+        <i class="ti ti-filter" aria-hidden="true"></i>
+        <div>
+          <h3>Filter Replacement</h3>
+          <p>Regular filter replacement keeps your commercial kitchen exhaust system operating safely and efficiently. Clean, properly functioning filters improve airflow, reduce grease buildup in the ductwork, lower the risk of fire, and help maintain compliance with NFPA 96 standards.</p>
+          <p>Replacing worn or damaged filters also helps extend the life of your exhaust system and improves overall kitchen ventilation.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="service-detail">
-    <div class="container service-detail__grid">
-      <i class="ti ti-spray" aria-hidden="true"></i>
-      <div>
-        <h3>Patio Pressure Washing</h3>
-        <p>Keep your outdoor spaces looking clean and professional with our patio pressure washing service. We remove dirt, grease, stains, algae, and grime from concrete, pavers, and other hard surfaces, improving curb appeal and creating a safer, more inviting environment for customers and employees.</p>
-        <p>This service is a great addition to routine property maintenance or commercial kitchen exhaust cleaning.</p>
+  <section class="service-detail service-detail--with-media">
+    <div class="container service-with-media">
+      <div class="service-media-col">
+        <img src="Pictures/patio%20pressure%20washing.jpeg" alt="Pressure washing a commercial patio surface">
+      </div>
+      <div class="service-detail__grid">
+        <i class="ti ti-spray" aria-hidden="true"></i>
+        <div>
+          <h3>Patio Pressure Washing</h3>
+          <p>Keep your outdoor spaces looking clean and professional with our patio pressure washing service. We remove dirt, grease, stains, algae, and grime from concrete, pavers, and other hard surfaces, improving curb appeal and creating a safer, more inviting environment for customers and employees.</p>
+          <p>This service is a great addition to routine property maintenance or commercial kitchen exhaust cleaning.</p>
+        </div>
       </div>
     </div>
   </section>
