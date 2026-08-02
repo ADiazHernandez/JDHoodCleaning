@@ -40,6 +40,12 @@ body.dark-mode {
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
 body {
   margin: 0;
   font-family: var(--font-sans);
@@ -47,6 +53,7 @@ body {
   background: var(--page-bg);
   line-height: 1.6;
   transition: background-color 0.2s ease, color 0.2s ease;
+  overscroll-behavior-x: none;
 }
 
 .container {
@@ -77,9 +84,14 @@ body.dark-mode .trust-strip {
 
 body.dark-mode .trust-strip__label,
 body.dark-mode .section-heading .eyebrow,
-body.dark-mode .plan-card__badge,
-body.dark-mode .badge {
+body.dark-mode .plan-card__badge {
   color: var(--blue-100);
+}
+
+body.dark-mode .badge {
+  color: #dceeff;
+  background: rgba(22, 87, 166, 0.18);
+  border-color: rgba(142, 195, 255, 0.35);
 }
 
 /* Utility bar */
@@ -104,11 +116,19 @@ body.dark-mode .badge {
   flex-wrap: wrap;
 }
 
+.utility-bar__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
 .utility-bar__inner i {
   margin-right: 5px;
 }
 
-.theme-toggle {
+.theme-toggle,
+.translation-toggle {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -123,7 +143,8 @@ body.dark-mode .badge {
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-.theme-toggle:hover {
+.theme-toggle:hover,
+.translation-toggle:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 
@@ -140,6 +161,7 @@ body.dark-mode .badge {
   justify-content: space-between;
   padding: 10px 18px; /* slightly larger header */
   gap: 12px;
+  min-width: 0;
 }
 
 .logo {
@@ -152,6 +174,8 @@ body.dark-mode .badge {
   font-size: 17px;
   margin-left: 24px;
   white-space: nowrap;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .logo__mark {
@@ -171,6 +195,7 @@ body.dark-mode .badge {
   flex-direction: column;
   font-weight: 700;
   font-size: 18px;
+  min-width: 0;
 }
 
 .logo__wordmark > span {
@@ -228,6 +253,9 @@ body.dark-mode .badge {
   gap: 4px;
   padding: 12px 40px 20px;
   border-bottom: 1px solid var(--border);
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .mobile-nav a {
@@ -825,5 +853,106 @@ body.dark-mode .badge {
   .page-header {
     padding-left: 20px;
     padding-right: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .utility-bar__inner {
+    padding: 8px 16px;
+  }
+
+  .site-header__inner {
+    flex-wrap: nowrap;
+    gap: 10px;
+    padding: 10px 16px;
+  }
+
+  .logo {
+    margin-left: 0;
+    gap: 12px;
+    font-size: 15px;
+    white-space: normal;
+    overflow: hidden;
+  }
+
+  .logo__mark {
+    max-height: 80px;
+    transform: translateY(3px);
+  }
+
+  .logo__wordmark {
+    font-size: 16px;
+    white-space: nowrap;
+  }
+
+  .logo__wordmark > span {
+    font-size: 12px;
+  }
+
+  .nav-toggle {
+    margin-left: auto;
+  }
+
+  .mobile-nav {
+    padding: 12px 16px 18px;
+  }
+
+  .hero {
+    padding: 36px 16px 0;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  .hero__lead {
+    font-size: 15px;
+    max-width: none;
+  }
+
+  .hero__actions {
+    margin-bottom: 28px;
+  }
+
+  .badge {
+    margin-bottom: 14px;
+  }
+
+  .trust-strip__inner,
+  .certifications__inner {
+    padding: 16px;
+  }
+
+  .trust-strip__items {
+    gap: 12px 16px;
+  }
+
+  .services,
+  .pricing,
+  .cta,
+  .page-header,
+  .service-detail,
+  .process,
+  .compliance-block,
+  .contact-layout,
+  .site-footer__inner {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .service-detail__grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .contact-info__item {
+    gap: 10px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 16px;
   }
 }
