@@ -59,6 +59,7 @@ const translations = {
     'Service area': 'Área de servicio',
     'Restaurants and commercial kitchens Madison Wisconsin area and neighbouring cities.': 'Restaurantes y cocinas comerciales del área de Madison, Wisconsin y ciudades vecinas.',
     'Available for emergencies': 'Disponible para emergencias',
+    '(608)-512-3790 &middot; Available for emergencies': '(608)-512-3790 &middot; Disponible para emergencias',
     'available for emergencies': 'disponible para emergencias',
     'Full name': 'Nombre completo',
     'Business name': 'Nombre del negocio',
@@ -168,29 +169,43 @@ const translations = {
   }
 };
 
-function applyTheme(theme) {
-  const isDark = theme === 'dark';
-  document.body.classList.toggle('dark-mode', isDark);
+let isSpanishMode = false;
+
+function renderUtilityBar() {
+  const isDark = document.body.classList.contains('dark-mode');
+  const translationMap = isSpanishMode ? translations.es : translations.en;
 
   if (themeToggle) {
+    const themeLabel = isDark ? 'Light mode' : 'Dark mode';
+    const translatedThemeLabel = translationMap[themeLabel] || themeLabel;
     themeToggle.setAttribute('aria-pressed', String(isDark));
     themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
     themeToggle.innerHTML = isDark
-      ? '<i class="ti ti-sun" aria-hidden="true"></i><span>Light mode</span>'
-      : '<i class="ti ti-moon" aria-hidden="true"></i><span>Dark mode</span>';
+      ? '<i class="ti ti-sun" aria-hidden="true"></i><span>' + translatedThemeLabel + '</span>'
+      : '<i class="ti ti-moon" aria-hidden="true"></i><span>' + translatedThemeLabel + '</span>';
   }
 
-  localStorage.setItem('theme', theme);
+  if (translationToggle) {
+    const toggleLabel = isSpanishMode ? 'English' : 'Español';
+    const translatedToggleLabel = translationMap[toggleLabel] || toggleLabel;
+    translationToggle.setAttribute('aria-pressed', String(isSpanishMode));
+    translationToggle.setAttribute('aria-label', isSpanishMode ? 'Switch to English' : 'Translate page');
+    translationToggle.innerHTML = '<i class="ti ti-language" aria-hidden="true"></i><span>' + translatedToggleLabel + '</span>';
+  }
+
+  const utilityText = document.querySelector('.utility-bar__meta span');
+  if (utilityText) {
+    const englishText = '(608)-512-3790 &middot; Available for emergencies';
+    const spanishText = '(608)-512-3790 &middot; Disponible para emergencias';
+    utilityText.textContent = isSpanishMode ? spanishText : englishText;
+  }
 }
 
-function updateTranslationToggle(isSpanish) {
-  if (translationToggle) {
-    translationToggle.setAttribute('aria-pressed', String(isSpanish));
-    translationToggle.setAttribute('aria-label', isSpanish ? 'Switch to English' : 'Translate page');
-    translationToggle.innerHTML = isSpanish
-      ? '<i class="ti ti-language" aria-hidden="true"></i><span>English</span>'
-      : '<i class="ti ti-language" aria-hidden="true"></i><span>Español</span>';
-  }
+function applyTheme(theme) {
+  const isDark = theme === 'dark';
+  document.body.classList.toggle('dark-mode', isDark);
+  localStorage.setItem('theme', theme);
+  renderUtilityBar();
 }
 
 const translationState = {
@@ -216,10 +231,16 @@ function getStoredAttributeValue(element, attributeName) {
 }
 
 function applyTranslation(isSpanish) {
+  isSpanishMode = isSpanish;
   const language = isSpanish ? 'es' : 'en';
   const translationMap = translations[language];
   document.documentElement.lang = language;
   document.body.classList.toggle('is-spanish', isSpanish);
+
+  const utilityText = document.querySelector('.utility-bar__meta span');
+  if (utilityText) {
+    utilityText.textContent = isSpanish ? '(608)-512-3790 • Disponible para emergencias' : '(608)-512-3790 • Available for emergencies';
+  }
 
   const textWalker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
     acceptNode(node) {
@@ -270,7 +291,7 @@ function applyTranslation(isSpanish) {
     element.textContent = translatedValue;
   });
 
-  updateTranslationToggle(isSpanish);
+  renderUtilityBar();
   localStorage.setItem('language', language);
 }
 
