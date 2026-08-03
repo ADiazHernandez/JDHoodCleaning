@@ -5,6 +5,8 @@ const translationToggle = document.querySelector('.translation-toggle');
 const navToggle = document.querySelector('.nav-toggle');
 const mobileNav = document.getElementById('mobile-nav');
 const siteLogo = document.querySelector('.logo');
+const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('form-status');
 
 function closeMobileNav() {
   if (mobileNav) {
@@ -13,6 +15,12 @@ function closeMobileNav() {
   if (navToggle) {
     navToggle.setAttribute('aria-expanded', 'false');
   }
+}
+
+function setFormStatus(message, isError = false) {
+  if (!formStatus) return;
+  formStatus.className = `form-status${isError ? ' form-status--error' : ' form-status--success'}`;
+  formStatus.innerHTML = message;
 }
 
 window.addEventListener('resize', () => {
@@ -312,6 +320,50 @@ if (translationToggle) {
   translationToggle.addEventListener('click', () => {
     const isSpanish = document.body.classList.contains('is-spanish');
     applyTranslation(!isSpanish);
+  });
+}
+
+if (contactForm) {
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+
+  contactForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    if (!submitButton) return;
+
+    const formData = new FormData(contactForm);
+    const formValues = Object.fromEntries(formData.entries());
+    const subject = `New contact request from ${formValues.name || 'website visitor'}`;
+    const body = Object.entries(formValues)
+      .map(([key, value]) => `${key}: ${value}`)
+      .join('\n');
+    const fallbackMailto = `mailto:ehdservices3@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    setFormStatus('Sending your request...', false);
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending...';
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: contactForm.method,
+        headers: {
+          Accept: 'application/json'
+        },
+        body: new URLSearchParams(formData)
+      });
+
+      if (!response.ok) {
+        throw new Error('Formspree request failed');
+      }
+
+      contactForm.reset();
+      setFormStatus('Thanks! Your request was sent successfully. We will be in touch soon.', false);
+    } catch (error) {
+      setFormStatus(`Formspree is unavailable right now. <a href="${fallbackMailto}" target="_blank" rel="noopener noreferrer">Send the request directly by email</a> instead.`, true);
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = 'Submit request';
+    }
   });
 }
 

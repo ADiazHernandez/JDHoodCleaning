@@ -103,7 +103,7 @@
 
     <div>
       <h2 style="font-size:20px; margin-bottom:18px;">Request a quote</h2>
-      <form>
+      <form id="contactForm" action="https://formspree.io/f/meeyywjo" method="POST">
         <div class="form-group">
           <label for="name">Full name</label>
           <input type="text" id="name" name="name" required>
@@ -134,6 +134,7 @@
           <textarea id="message" name="message" placeholder="Number of hoods, approximate square footage, current cleaning schedule, etc."></textarea>
         </div>
         <button type="submit" class="btn btn--primary btn--lg">Submit request</button>
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
       </form>
     </div>
   </section>
