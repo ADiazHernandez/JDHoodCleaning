@@ -195,8 +195,8 @@ function renderUtilityBar() {
 
   const utilityText = document.querySelector('.utility-bar__meta span');
   if (utilityText) {
-    const englishText = '(608)-512-3790 &middot; Available for emergencies';
-    const spanishText = '(608)-512-3790 &middot; Disponible para emergencias';
+    const englishText = '(608)-512-3790 · Available for emergencies';
+    const spanishText = '(608)-512-3790 · Disponible para emergencias';
     utilityText.textContent = isSpanishMode ? spanishText : englishText;
   }
 }
@@ -239,7 +239,7 @@ function applyTranslation(isSpanish) {
 
   const utilityText = document.querySelector('.utility-bar__meta span');
   if (utilityText) {
-    utilityText.textContent = isSpanish ? '(608)-512-3790 • Disponible para emergencias' : '(608)-512-3790 • Available for emergencies';
+    utilityText.textContent = isSpanish ? '(608)-512-3790 · Disponible para emergencias' : '(608)-512-3790 · Available for emergencies';
   }
 
   const textWalker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {

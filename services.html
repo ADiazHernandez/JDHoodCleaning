@@ -24,8 +24,8 @@
     }
     .service-with-media > .ba-slider-col,
     .service-with-media > .service-media-col {
-      flex: 0 0 340px;
-      max-width: 340px;
+      flex: 0 0 320px;
+      max-width: 320px;
     }
     .service-with-media > .service-detail__grid {
       flex: 1;
@@ -33,9 +33,17 @@
     }
   }
 
+  .service-media-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
   .service-media-col img {
     width: 100%;
     aspect-ratio: 4 / 3;
+    max-height: 320px;
+    min-height: 220px;
     border-radius: 12px;
     overflow: hidden;
     object-fit: cover;
@@ -164,18 +172,24 @@
     <nav class="site-nav" aria-label="Primary">
       <a href="index.html">Home</a>
       <a href="services.html" class="is-active">Services</a>
+      <a href="gallery.html">Gallery</a>
       <a href="pricing.html">Pricing</a>
       <a href="compliance.html">Compliance</a>
       <a href="contact.html">Contact</a>
     </nav>
     <a href="contact.html" class="btn btn--primary">Request service</a>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
-      <i class="ti ti-menu-2" aria-hidden="true"></i>
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="4" y1="7" x2="20" y2="7"></line>
+        <line x1="4" y1="12" x2="20" y2="12"></line>
+        <line x1="4" y1="17" x2="20" y2="17"></line>
+      </svg>
     </button>
   </div>
   <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile" hidden>
     <a href="index.html">Home</a>
     <a href="services.html" class="is-active">Services</a>
+    <a href="gallery.html">Gallery</a>
     <a href="pricing.html">Pricing</a>
     <a href="compliance.html">Compliance</a>
     <a href="contact.html">Contact</a>
@@ -210,6 +224,7 @@
           </div>
         </div>
         <p class="ba-slider__caption">Drag to compare &mdash; real job, before and after.</p>
+        <a href="gallery.html" class="service-media-link">See more pictures</a>
       </div>
       <div class="service-detail__grid">
         <i class="ti ti-air-conditioning" aria-hidden="true"></i>
@@ -225,6 +240,7 @@
     <div class="container service-with-media">
       <div class="service-media-col">
         <img src="Pictures/documentation.jpeg" alt="Dated compliance certification and inspection report documentation">
+        <a href="gallery.html" class="service-media-link">See more pictures</a>
       </div>
       <div class="service-detail__grid">
         <i class="ti ti-file-certificate" aria-hidden="true"></i>
@@ -240,6 +256,7 @@
     <div class="container service-with-media">
       <div class="service-media-col">
         <img src="Pictures/access%20door.jpeg" alt="Grease duct access door installed on commercial kitchen ductwork">
+        <a href="gallery.html" class="service-media-link">See more pictures</a>
       </div>
       <div class="service-detail__grid">
         <i class="ti ti-door" aria-hidden="true"></i>
@@ -256,6 +273,7 @@
     <div class="container service-with-media">
       <div class="service-media-col">
         <img src="Pictures/hood%20hinge%20installation.jpeg" alt="Hood hinge installed on commercial kitchen exhaust hood">
+        <a href="gallery.html" class="service-media-link">See more pictures</a>
       </div>
       <div class="service-detail__grid">
         <i class="ti ti-adjustments-horizontal" aria-hidden="true"></i>
@@ -272,6 +290,7 @@
     <div class="container service-with-media">
       <div class="service-media-col">
         <img src="Pictures/grease%20containment%20system.jpeg" alt="Rooftop grease containment system installed near exhaust fan">
+        <a href="gallery.html" class="service-media-link">See more pictures</a>
       </div>
       <div class="service-detail__grid">
         <i class="ti ti-building-skyscraper" aria-hidden="true"></i>
@@ -288,6 +307,7 @@
     <div class="container service-with-media">
       <div class="service-media-col">
         <img src="Pictures/filter%20replacement.jpeg" alt="Clean replacement grease filters for commercial kitchen exhaust hood">
+        <a href="gallery.html" class="service-media-link">See more pictures</a>
       </div>
       <div class="service-detail__grid">
         <i class="ti ti-filter" aria-hidden="true"></i>
@@ -304,6 +324,7 @@
     <div class="container service-with-media">
       <div class="service-media-col">
         <img src="Pictures/patio%20pressure%20washing.jpeg" alt="Pressure washing a commercial patio surface">
+        <a href="gallery.html" class="service-media-link">See more pictures</a>
       </div>
       <div class="service-detail__grid">
         <i class="ti ti-spray" aria-hidden="true"></i>
