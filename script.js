@@ -47,6 +47,7 @@ const translations = {
     'English': 'English',
     'Home': 'Inicio',
     'Services': 'Servicios',
+    'Gallery': 'Galería',
     'Pricing': 'Precios',
     'Compliance': 'Cumplimiento',
     'Contact': 'Contacto',
@@ -59,8 +60,6 @@ const translations = {
     'View service plans': 'Ver planes de servicio',
     'See all services': 'Ver todos los servicios',
     'Full pricing details': 'Detalles completos de precios',
-    'Get in touch': 'Póngase en contacto',
-    'Request a quote': 'Solicitar una cotización',
     'Get in touch': 'Póngase en contacto',
     'Phone': 'Teléfono',
     'Email': 'Correo electrónico',
@@ -117,7 +116,6 @@ const translations = {
     'MFS Certified': 'Certificado por MFS',
     'Due for your next inspection?': '¿Listo para su próxima inspección?',
     'Most kitchens need cleaning every 3–6 months to stay compliant. Get a free, no-obligation quote.': 'La mayoría de cocinas necesitan limpieza cada 3–6 meses para mantenerse en cumplimiento. Obtenga una cotización gratis y sin compromiso.',
-    'Services': 'Servicios',
     'Everything your commercial kitchen needs to stay fire-safe, code-compliant, and ready for inspection — from routine cleaning to full compliance documentation.': 'Todo lo que su cocina comercial necesita para mantenerse segura contra incendios, en cumplimiento normativo y lista para inspección — desde la limpieza rutinaria hasta la documentación completa de cumplimiento.',
     'Hood & Duct Cleaning': 'Limpieza de campana y conductos',
     'Our certified technicians clean your entire exhaust system — hood, ductwork, filters, and fan — down to bare metal per NFPA 96 standards, cutting fire risk and keeping your kitchen safe and code compliant.': 'Nuestros técnicos certificados limpian todo su sistema de extracción — campana, conductos, filtros y ventilador — hasta metal desnudo según los estándares NFPA 96, reduciendo el riesgo de incendio y manteniendo su cocina segura y en cumplimiento.',
@@ -162,18 +160,46 @@ const translations = {
     'MFS certified': 'Certificado por MFS',
     'We are MFS certified, following the industry-standard practices and quality expectations that support safe, compliant exhaust system maintenance.': 'Somos certificados por MFS, siguiendo las prácticas estándar de la industria y las expectativas de calidad que apoyan el mantenimiento seguro y conforme de los sistemas de extracción.',
     'What documentation do you provide?': '¿Qué documentación proporcionan?',
-    'Every completed job includes a dated service tag affixed to the hood, a written report, and time-stamped photos of the system before and after cleaning. This documentation is formatted to meet what most insurers and local fire departments require during inspections.': 'Cada trabajo completado incluye una etiqueta de servicio fechada adherida a la campana, un informe escrito y fotos con marca de tiempo del sistema antes y después de la limpieza. Esta documentación está formateada para cumplir con lo que la mayoría de aseguradoras y cuerpos de bomberos locales exigen durante las inspecciones.',
     'Every completed job includes a dated service tag affixed to the hood, a written report, and time-stamped photos of the system before and after cleaning. This documentation is formatted to meet what most insurers and local fire departments require during inspections — and we keep a copy on file so you always have a backup if yours goes missing.': 'Cada trabajo completado incluye una etiqueta de servicio fechada adherida a la campana, un informe escrito y fotos con marca de tiempo del sistema antes y después de la limpieza. Esta documentación está formateada para cumplir con lo que la mayoría de aseguradoras y cuerpos de bomberos locales exigen durante las inspecciones — y guardamos una copia en archivo para que siempre tenga respaldo si la suya desaparece.',
     'Need documentation for an upcoming inspection?': '¿Necesita documentación para una próxima inspección?',
     'We can provide records from past visits or schedule a new cleaning ahead of your inspection date.': 'Podemos proporcionar registros de visitas anteriores o programar una nueva limpieza antes de la fecha de su inspección.',
     'Ready to book a cleaning?': '¿Listo para reservar una limpieza?',
     'Get a free, no-obligation quote based on your kitchen\'s size and current cleaning cadence.': 'Obtenga una cotización gratis y sin compromiso según el tamaño de su cocina y su frecuencia actual de limpieza.',
     'Get a free quote': 'Obtener una cotización gratis',
-    'Get a free, no-obligation quote based on your kitchen\'s size and current cleaning cadence.': 'Obtenga una cotización gratis y sin compromiso según el tamaño de su cocina y su frecuencia actual de limpieza.',
-    'Pricing questions': 'Preguntas sobre precios',
-    'Frequently asked': 'Preguntas frecuentes',
-    'Contact us': 'Contáctanos',
-    'Open menu': 'Abrir menú'
+
+    // Gallery page
+    'Project gallery': 'Galería de proyectos',
+    'Recent examples of hood, duct, documentation, and access work completed for commercial kitchens.': 'Ejemplos recientes de trabajos de campanas, conductos, documentación y accesos realizados en cocinas comerciales.',
+    'Hood before service': 'Campana antes del servicio',
+    'Grease buildup and residue visible before the cleaning process.': 'Acumulación de grasa y residuos visibles antes del proceso de limpieza.',
+    'Hood after service': 'Campana después del servicio',
+    'Freshly cleaned hood showing a restored, professional finish.': 'Campana recién limpiada que muestra un acabado restaurado y profesional.',
+    'Before duct cleaning': 'Antes de la limpieza de conductos',
+    'Heavy grease buildup inside a commercial exhaust duct before service.': 'Fuerte acumulación de grasa dentro de un conducto de extracción comercial antes del servicio.',
+    'After duct cleaning': 'Después de la limpieza de conductos',
+    'Fully cleaned ductwork restored to a safe, bare-metal finish.': 'Conductos completamente limpios, restaurados a un acabado seguro de metal desnudo.',
+    'Service tags, before-and-after photos, and inspection paperwork.': 'Etiquetas de servicio, fotos de antes y después, y documentación de inspección.',
+    'Access door install': 'Instalación de puerta de acceso',
+    'Code-compliant access for future inspection and maintenance.': 'Acceso conforme a la normativa para futuras inspecciones y mantenimiento.',
+    'Hood hinge installation': 'Instalación de bisagras de campana',
+    'Safe hinge setup that improves access during cleaning and service.': 'Instalación segura de bisagras que mejora el acceso durante la limpieza y el servicio.',
+    'Grease containment system': 'Sistema de contención de grasa',
+    'Roof-mounted containment installed to protect the building and improve safety.': 'Sistema de contención instalado en el techo para proteger el edificio y mejorar la seguridad.',
+    'Filter replacement': 'Reemplazo de filtros',
+    'Fresh filters installed for airflow, safety, and compliance.': 'Filtros nuevos instalados para mejorar el flujo de aire, la seguridad y el cumplimiento.',
+    'Patio pressure washing': 'Lavado a presión de patio',
+    'Outdoor cleaning that keeps the property looking professional and safe.': 'Limpieza exterior que mantiene la propiedad con un aspecto profesional y seguro.',
+    'Commercial hood before cleaning': 'Campana comercial antes de la limpieza',
+    'Commercial hood after cleaning': 'Campana comercial después de la limpieza',
+    'Grease buildup before duct cleaning': 'Acumulación de grasa antes de la limpieza de conductos',
+    'Duct after cleaning to bare metal': 'Conducto después de la limpieza hasta metal desnudo',
+    'Compliance documentation and service report': 'Documentación de cumplimiento e informe de servicio',
+    'Grease duct access door installation': 'Instalación de puerta de acceso a conducto de grasa',
+    'Hood hinge installation on commercial exhaust hood': 'Instalación de bisagras en campana de extracción comercial',
+    'Rooftop grease containment system installation': 'Instalación de sistema de contención de grasa en la azotea',
+    'Replacement grease filters installed in a hood': 'Filtros de grasa de reemplazo instalados en una campana',
+    'Pressure washing a commercial patio area': 'Lavado a presión de un área de patio comercial',
+    'Close image preview': 'Cerrar vista previa de imagen'
   }
 };
 
@@ -300,13 +326,13 @@ function applyTranslation(isSpanish) {
   });
 
   renderUtilityBar();
-  localStorage.setItem('language', language);
+  sessionStorage.setItem('language', language);
 }
 
 const preferredTheme = localStorage.getItem('theme') || 'light';
 applyTheme(preferredTheme);
 
-const preferredLanguage = localStorage.getItem('language') || 'en';
+const preferredLanguage = sessionStorage.getItem('language') || 'en';
 applyTranslation(preferredLanguage === 'es');
 
 if (themeToggle) {
