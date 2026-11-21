@@ -451,7 +451,7 @@ body.dark-mode .nav-toggle {
 
 .services__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
@@ -705,35 +705,35 @@ body.dark-mode .nav-toggle {
   padding: 0 8px;
 }
 
-/* Compliance page */
-.compliance-block {
+/* FAQ */
+.faq-block {
   padding: 56px 40px;
   border-top: 1px solid var(--border);
 }
 
-.compliance-block__grid {
+.faq-block__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
-.compliance-item {
+.faq-item {
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 22px;
 }
 
-.compliance-item i {
+.faq-item i {
   font-size: 22px;
   color: var(--blue-600);
 }
 
-.compliance-item h3 {
+.faq-item h3 {
   font-size: 15px;
   margin: 12px 0 6px;
 }
 
-.compliance-item p {
+.faq-item p {
   font-size: 13px;
   color: var(--text-secondary);
   margin: 0;
@@ -1021,14 +1021,14 @@ body.dark-mode .nav-toggle {
   }
 
   .process__grid,
-  .compliance-block__grid,
+  .faq-block__grid,
   .contact-layout {
     grid-template-columns: 1fr;
   }
 
   .service-detail,
   .process,
-  .compliance-block,
+  .faq-block,
   .contact-layout,
   .page-header {
     padding-left: 20px;
@@ -1119,7 +1119,7 @@ body.dark-mode .nav-toggle {
   .page-header,
   .service-detail,
   .process,
-  .compliance-block,
+  .faq-block,
   .contact-layout,
   .site-footer__inner {
     padding-left: 16px;
